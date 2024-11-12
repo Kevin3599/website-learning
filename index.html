@@ -1,34 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 <style>
 body {
-  background-color: #f5f5f5; /* 更柔和的背景颜色 */
-  font-family: Arial, sans-serif; /* 默认字体 */
+  background-color: #ffffff; /* 白色背景 */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #333; /* 深灰色 */
+  background-image: url('sports-agency-background.jpg'); /* 背景图片 */
+  background-size: cover;
+  background-position: center;
 }
 
 .caa-logo {
-  position: absolute;
-  top: 50px;
-  left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
 }
 
-.caa-logo h1 {
-  font-size: 36px; /* 调整 logo 字体大小 */
-  color: #333; /* 深灰色 */
+.caa-logo img {
+  width: 150px; /* 调整 logo 图片大小 */
 }
 
 .menu {
-  position: absolute;
-  top: 50%;
-  left: 70%; /* 向右移动 */
-  transform: translate(0, -50%);
-  color: #333; /* 深灰色 */
-  font-size: 18px; /* 调整菜单字体大小 */
+  text-align: center;
+  font-size: 24px; /* 加大菜单字体大小 */
+  font-weight: bold; /* 加粗字体 */
+  font-style: italic; /* 使用斜体字 */
+  background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .menu-item {
-  margin-bottom: 30px; /* 调整菜单项间距 */
+  margin-bottom: 20px; /* 调整菜单项间距 */
 }
 
 a {
@@ -38,28 +53,31 @@ a {
 
 .bottom-menu {
   position: absolute;
-  bottom: 50px;
-  left: 50px;
-  color: #666; /* 浅灰色 */
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .bottom-menu-item {
-  display: inline-block;
-  margin-right: 20px;
+  margin: 0 10px;
 }
 </style>
 </head>
 <body>
 
 <div class="caa-logo">
-  <h1>CAA</h1>
+  <img src="logo.png" alt="Company Logo"> <!-- 添加 logo 图片 -->
 </div>
 
 <div class="menu">
-  <div class="menu-item">For Talent</div>
-  <div class="menu-item">For Brands</div>
-  <div class="menu-item">For Enterprise</div>
+  <div class="menu-item"><a href="#">For Talent</a></div>
+  <div class="menu-item"><a href="#">For Brands</a></div>
+  <div class="menu-item"><a href="#">For Enterprise</a></div>
 </div>
 
 <div class="bottom-menu">
