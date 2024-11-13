@@ -1,13 +1,13 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
 body {
-  background-color: #ffffff; /* 白色背景 */
-  font-family: Arial, sans-serif;
+  background-color: red; /* 初始背景颜色为红色 */
+  font-family: 'Roboto', sans-serif; /* 使用 Roboto 字体 */
   margin: 0;
   padding: 0;
   display: flex;
@@ -15,114 +15,143 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  color: #333; /* 深灰色 */
+  color: white; /* 初始字体颜色为白色 */
+  overflow: hidden; /* 防止滚动条出现 */
+  animation: backgroundFade 6s forwards; /* 背景颜色渐变动画 */
 }
 
-.caa-logo {
+@keyframes backgroundFade {
+  0% {
+    background-color: red;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+.fade-in-text {
+  font-size: 48px; /* 更大的字体 */
+  color: white;
+  animation: fadeInOut 6s forwards; /* 动画时间延长到6秒 */
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    color: white;
+  }
+  50% {
+    opacity: 1;
+    color: white;
+  }
+  100% {
+    opacity: 0;
+    color: white;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.language-switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.button-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
-  animation: logoBounceIn 1s ease-in-out; /* 添加弹跳动画 */
-}
-
-@keyframes logoBounceIn {
-  0% {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(20px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.caa-logo img {
-  width: 150px; /* 调整 logo 图片大小 */
-}
-
-.menu {
-  text-align: center;
-  font-size: 24px; /* 加大菜单字体大小 */
-  font-weight: bold; /* 加粗字体 */
-  font-style: italic; /* 使用斜体字 */
-  animation: menuFadeIn 2s ease-in-out; /* 添加淡入动画 */
-}
-
-@keyframes menuFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.menu-item {
-  margin-bottom: 20px; /* 调整菜单项间距 */
-  animation: menuItemSlideIn 1s ease-in-out; /* 添加滑入动画 */
-}
-
-@keyframes menuItemSlideIn {
-  from {
-    transform: translateX(-50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-a {
-  color: #333; /* 深灰色 */
-  text-decoration: none;
-}
-
-.bottom-menu {
-  position: absolute;
-  bottom: 20px;
-  display: flex;
   justify-content: center;
-  width: 100%;
-  font-size: 14px;
-  animation: bottomMenuFadeIn 2s ease-in-out; /* 添加淡入动画 */
+  gap: 20px; /* 按钮之间的间距 */
 }
 
-@keyframes bottomMenuFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.styled-button {
+  background-color: #ffffff; /* 白色背景 */
+  border: none; /* 无边框 */
+  color: #333; /* 深灰色文字 */
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px; /* 调整字体大小 */
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px; /* 圆角 */
+  transition: background-color 0.3s ease, color 0.3s ease; /* 背景颜色和文字颜色过渡效果 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+  letter-spacing: 0.5px; /* 调整字间距 */
 }
 
-.bottom-menu-item {
-  margin: 0 10px;
+.styled-button:hover {
+  background-color: #333; /* 悬停时的背景颜色 */
+  color: #ffffff; /* 悬停时的文字颜色 */
 }
 </style>
 </head>
 <body>
 
-<div class="caa-logo">
-  <img src="logo.png" alt="Company Logo"> <!-- 添加 logo 图片 -->
+<div id="introText" class="fade-in-text">我们为你制造机会</div>
+
+<div id="mainContent" class="hidden">
+  <div class="language-switch">
+    <button id="languageButton" class="styled-button">中文</button>
+  </div>
+
+  <div class="caa-logo">
+    <img src="logo.png" alt="Logo">
+  </div>
+
+  <div class="button-container">
+    <button class="styled-button" id="button1">体育留学</button>
+    <button class="styled-button" id="button2">球员经纪</button>
+    <button class="styled-button" id="button3">AAU项目</button>
+  </div>
 </div>
 
-<div class="menu">
-  <div class="menu-item"><a href="#">For Talent</a></div>
-  <div class="menu-item"><a href="#">For Brands</a></div>
-  <div class="menu-item"><a href="#">For Enterprise</a></div>
-</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+    document.body.style.backgroundColor = "white"; // 切换到白色背景
+    document.body.style.color = "#333"; // 切换到深灰色字体
+    document.getElementById("introText").classList.add("hidden");
+    document.getElementById("mainContent").classList.remove("hidden");
+  }, 6000); // 6秒后切换到主界面
 
-<div class="bottom-menu">
-  <div class="bottom-menu-item"><a href="#">About</a></div>
-  <div class="bottom-menu-item"><a href="#">Careers</a></div>
-  <div class="bottom-menu-item"><a href="#">Contact</a></div>
-</div>
+  document.getElementById("languageButton").addEventListener("click", function() {
+    const button1 = document.getElementById("button1");
+    const button2 = document.getElementById("button2");
+    const button3 = document.getElementById("button3");
+    const languageButton = document.getElementById("languageButton");
+
+    if (languageButton.innerText === "中文") {
+      button1.innerText = "Sports Study";
+      button2.innerText = "Player Agency";
+      button3.innerText = "AAU Project";
+      languageButton.innerText = "English";
+    } else {
+      button1.innerText = "体育留学";
+      button2.innerText = "球员经纪";
+      button3.innerText = "AAU项目";
+      languageButton.innerText = "中文";
+    }
+  });
+
+  document.getElementById("button1").addEventListener("click", function() {
+    window.location.href = "sports-study.html"; // 跳转到体育留学页面
+  });
+
+  document.getElementById("button2").addEventListener("click", function() {
+    window.location.href = "player-agency.html"; // 跳转到球员经纪页面
+  });
+
+  document.getElementById("button3").addEventListener("click", function() {
+    window.location.href = "aau-project.html"; // 跳转到AAU项目页面
+  });
+});
+</script>
 
 </body>
 </html>
