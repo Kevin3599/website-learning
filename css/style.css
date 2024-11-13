@@ -10,7 +10,8 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 15px 0;
+    text-align: center;
 }
 
 nav ul {
@@ -32,17 +33,55 @@ nav ul li a {
 }
 
 #hero {
-    background-image: url('images/hero-image.jpg'); /* 替换为实际的图片文件名 */
-    background-size: cover;
-    background-position: center;
+    background-color: #0056a6;
     color: #fff;
     text-align: center;
-    padding: 100px 20px;
+    padding: 60px 20px;
 }
 
-#about, #services {
-    padding: 50px 20px;
+#hero h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section {
+    background-color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    max-width: 800px;
     text-align: center;
+}
+
+.section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.section p, .section ul {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section ul li {
+    margin: 10px 0;
 }
 
 footer {
@@ -50,4 +89,5 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    font-size: 0.9em;
 }
