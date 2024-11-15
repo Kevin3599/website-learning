@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,13 +12,12 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
   color: white; /* 初始字体颜色为白色 */
   overflow: hidden; /* 防止滚动条出现 */
   animation: backgroundFade 6s forwards; /* 背景颜色渐变动画 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
 }
 
 @keyframes backgroundFade {
@@ -33,6 +33,10 @@ body {
   font-size: 48px; /* 更大的字体 */
   color: white;
   animation: fadeInOut 6s forwards; /* 动画时间延长到6秒 */
+  position: absolute; /* 绝对定位 */
+  top: 50%; /* 垂直居中 */
+  left: 50%; /* 水平居中 */
+  transform: translate(-50%, -50%); /* 使元素完全居中 */
 }
 
 @keyframes fadeInOut {
@@ -69,7 +73,7 @@ body {
 .button-container {
   position: absolute;
   top: 50%;
-  left: 300px; /* 调整按钮容器的位置，使其稍微向右移动 */
+  left: 25%; /* 调整按钮容器的位置，使其稍微向右移动 */
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -98,6 +102,44 @@ body {
   background-color: #333; /* 悬停时的背景颜色 */
   color: #ffffff; /* 悬停时的文字颜色 */
 }
+
+.carousel-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%; /* 占据右半边 */
+  height: 100%; /* 占据整个高度 */
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+  height: 100%;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 确保图片覆盖整个容器 */
+}
+
+.carousel-buttons {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.carousel-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
 </style>
 </head>
 <body>
@@ -118,6 +160,18 @@ body {
     <button class="styled-button" id="button2">球员经纪</button>
     <button class="styled-button" id="button3">AAU项目</button>
   </div>
+
+  <div class="carousel-container">
+    <div class="carousel" id="carousel">
+      <img src="images/image1.jpg" alt="Image 1"> <!-- 替换为你的图片路径 -->
+      <img src="images/image2.jpg" alt="Image 2"> <!-- 替换为你的图片路径 -->
+      <img src="images/image3.jpg" alt="Image 3"> <!-- 替换为你的图片路径 -->
+    </div>
+    <div class="carousel-buttons">
+      <button class="carousel-button" id="prevButton">&lt;</button>
+      <button class="carousel-button" id="nextButton">&gt;</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -127,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.style.color = "#333"; // 切换到深灰色字体
     document.getElementById("introText").classList.add("hidden");
     document.getElementById("mainContent").classList.remove("hidden");
-  }, 4000); // 6秒后切换到主界面
+  }, 6000); // 6秒后切换到主界面
 
   document.getElementById("languageButton").addEventListener("click", function() {
     const button1 = document.getElementById("button1");
@@ -159,6 +213,34 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("button3").addEventListener("click", function() {
     window.location.href = "aau-project.html"; // 跳转到AAU项目页面
   });
+
+  const carousel = document.getElementById("carousel");
+  const prevButton = document.getElementById("prevButton");
+  const nextButton = document.getElementById("nextButton");
+  let currentIndex = 0;
+
+  prevButton.addEventListener("click", function() {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = carousel.children.length - 1;
+    }
+    updateCarousel();
+  });
+
+  nextButton.addEventListener("click", function() {
+    if (currentIndex < carousel.children.length - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
+    updateCarousel();
+  });
+
+  function updateCarousel() {
+    const offset = -currentIndex * 100; // 100%是图片的宽度
+    carousel.style.transform = `translateX(${offset}%)`;
+  }
 });
 </script>
 
