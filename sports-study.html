@@ -11,19 +11,59 @@
             flex-direction: column;
             min-height: 100vh;
             margin: 0;
+            background-image: url('images/your-background-image.jpg'); /* 替换为你的背景图像路径 */
+            background-size: cover; /* 背景图像覆盖整个区域 */
+            background-position: center; /* 背景图像居中 */
+            color: white; /* 文字颜色为白色，以便在背景图上清晰可见 */
         }
-        header, section {
+        header, section, footer {
             padding: 20px;
+            margin: 20px; /* 与背景图之间的间距 */
+            background: none; /* 移除背景颜色 */
         }
-        header {
-            background-color: #413e3e; /* 灰色背景 */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white; /* 链接文字颜色为白色 */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .section {
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .section p, .section ul {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin: 10px 0;
         }
         footer {
-            background-color: #534e4e; /* 灰色背景，与header一致 */
-            padding: 10px;
+            background: none;
+            color: white;
             text-align: center;
-            margin-top: auto; /* 将 footer 放在页面底部 */
-            width: 100%; /* 确保 footer 占满页面宽度 */
+            padding: 10px 0;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -31,7 +71,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#home">首页</a></li>
+                <li><a href="index.html">首页</a></li> <!-- 修改此处的链接 -->
                 <li><a href="#about">关于我们</a></li>
                 <li><a href="#services">服务</a></li>
                 <li><a href="#contact">联系我们</a></li>
@@ -40,21 +80,16 @@
     </header>
 
     <section id="hero">
-        <h1>欢迎来到 DM 体育经纪公司</h1>
-        <p>我们为每位怀揣篮球梦想的青少年提供成为职业运动员的机会。</p>
-    </section>
-
-    <section id="about" class="section">
         <div class="content">
-            <h2>关于我们</h2>
-            <p>我们的团队拥有丰富的行业经验，专注于运动员的职业发展和品牌建设。</p>
+            <h1>欢迎来到 DM 体育经纪公司</h1>
+            <p>我们为每位怀揣篮球梦想的青少年提供成为职业运动员的机会。</p>
         </div>
     </section>
 
     <section id="project-overview" class="section">
         <div class="content">
             <h2>项目概述</h2>
-            <p>DM体育经纪公司提供全面的篮球服务，涵盖从球员职业管理到体育留学以及AAU篮球项目。在球员管理方面，我们的专业球员代理人负责全方位的职业生涯规划，包括寻找合适的商业代言机会，进行国内外高水平训练的安排，以及相关合同的谈判。对于有意赴美深造的青少年，我们的体育留学服务将协助他们申请进入顶尖的美国高中，确保他们能在校篮球队中获得足够的上场时间与球队地位并争取奖学金。AAU项目则专注于提供比赛资格和组织团队，让学生有机会通过参与正规比赛吸引美国大学教练的注意，并体验美国高中篮球的激烈竞争。</p>
+            <p>DM体育经纪公司提供全面的篮球服务，涵盖从球员职业管理到体育留学以及AAU篮球项目。在球员管理方面，我们的专业球员代理人负责全方位的职业生涯规划，包括寻找合适的商业代言机会，进行国内外高水平训练的安排，以及相关合同的谈判。对于有意赴美深造的青少年，我们的体育留学服务将协助他们申请进入顶级的美国高中，确保他们能在校篮球队中获得足够的上场时间与球队地位并争取奖学金。AAU项目则专注于提供比赛资格和组织团队，让学生有机会通过参与正规比赛吸引美国大学教练的注意，并体验美国高中篮球的激烈竞争。</p>
         </div>
     </section>
 
@@ -79,7 +114,7 @@
             <ul>
                 <li><strong>教练团队：</strong>负责提供技术指导、战术布置和比赛策略，帮助球员在赛场上发挥最佳。</li>
                 <li><strong>视频编辑人员：</strong>制作高质量的招募视频，作为球员与美国大学教练沟通的重要桥梁。</li>
-                <li><strong>细分部门：</strong>公司现有四个部门，一线营销，二线营销，财务，以及宣传。每个部门均有明确的分工职责，能够确保高效高产的完成所有任务。</li>
+                <li><strong>细分部门：</strong>公司现有四个部门，一线营销，二线营销，财务，以及宣传。每个部门均有明确的分工以及职责，能够确保高效高产的完成所有任务。</li>
             </ul>
         </div>
     </section>
