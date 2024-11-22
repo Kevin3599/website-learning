@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>中国精英AAU篮球队介绍</title>
     <style>
         body {
@@ -9,6 +10,7 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            overflow-x: hidden; /* 禁止水平滚动 */
         }
         header {
             background-color: #333;
@@ -17,7 +19,7 @@
             text-align: center;
         }
         nav {
-            background-color: #444;
+            background-color: #eb9797;
             overflow: hidden;
         }
         nav a {
@@ -30,7 +32,7 @@
         }
         nav a:hover {
             background-color: #ddd;
-            color: black;
+            color: rgb(202, 92, 92);
         }
         .container {
             padding: 20px;
@@ -41,23 +43,21 @@
             margin-bottom: 20px;
             border-radius: 5px;
             box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            height: 100vh; /* 每个section占据整个视口高度 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .section h2 {
-            margin-top: 0;
-        }
-        .section p {
-            text-indent: 2em;
+        .section img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* 保持图片比例 */
         }
         footer {
             background-color: #333;
             color: #fff;
             text-align: center;
             padding: 10px 0;
-        }
-        .pdf-container {
-            width: 100%;
-            height: 600px; /* 设置PDF显示区域的高度 */
-            border: none;
         }
     </style>
 </head>
@@ -73,7 +73,28 @@
     </nav>
     <div class="container">
         <div class="section">
-            <iframe src="C:\Files\website-learning\Chine Elite AAU球队介绍.pdf" class="pdf-container"></iframe>
+            <img src="images/image4.jpg" alt="Image 4"> <!-- 替换为你的图片路径 -->
+        </div>
+        <div class="section">
+            <img src="images/image5.jpg" alt="Image 5"> <!-- 替换为你的图片路径 -->
+        </div>
+        <div class="section">
+            <img src="images/image6.jpg" alt="Image 6"> <!-- 替换为你的图片路径 -->
+        </div>
+        <div class="section">
+            <img src="images/image7.jpg" alt="Image 7"> <!-- 替换为你的图片路径 -->
+        </div>
+        <div class="section">
+            <img src="images/image9.jpg" alt="Image 9"> <!-- 替换为你的图片路径 -->
+        </div>
+        <div class="section">
+            <img src="images/image10.jpg" alt="Image 10"> <!-- 替换为你的图片路径 -->
+        </div>
+        <div class="section">
+            <img src="images/image11.jpg" alt="Image 11"> <!-- 替换为你的图片路径 -->
+        </div>
+        <div class="section">
+            <img src="images/image12.jpg" alt="Image 12"> <!-- 替换为你的图片路径 -->
         </div>
     </div>
     <footer>
